@@ -7,8 +7,7 @@ const Projects = ({ isDarkMode }) => {
       title: "Grievance Redress System",
       description:
         "Complaint Management System The Complaint Management System is a web application that enables citizens to submit and track grievances while providing administrators with tools to manage and resolve complaints efficiently.",
-      image:
-        "https://i.ibb.co/G3FtM7pR/Grievance-Redress-System.png",
+      image: "https://i.ibb.co/G3FtM7pR/Grievance-Redress-System.png",
       technologies: ["React", "Node.js", "MongoDB", "i18next"],
       liveUrl: "https://ctggrievance.vercel.app",
       githubUrl: "https://github.com/Maptaul/Grievance-",
@@ -16,28 +15,26 @@ const Projects = ({ isDarkMode }) => {
       codeSnippet: "const ctggrievance = new Platform();",
     },
     {
-      title: "Task Manager App",
+      title: "LearnBridge - Collaborative Study Platform",
       description:
-        "A collaborative task management application with real-time updates and team collaboration features.",
-      image:
-        "https://images.pexels.com/photos/3184300/pexels-photo-3184300.jpeg?auto=compress&cs=tinysrgb&w=600",
-      technologies: ["React", "Firebase", "Tailwind CSS"],
-      liveUrl: "https://taskmanager-pro.netlify.app",
-      githubUrl: "https://github.com/jashedulislamshaun/task-manager",
+        "The Collaborative Study Platform simplifies education by connecting students, tutors, and admins. It enables efficient study session management, resource sharing, and streamlined collaboration.",
+      image: "https://i.ibb.co/SwLSt09p/Learn-Bridge.png",
+      technologies: ["React", "Firebase", "Tailwind CSS", "TanStack Query"],
+      liveUrl: "https://learnbridge-26280.web.app",
+      githubUrl: "https://github.com/Maptaul/LearnBridge-client",
       featured: true,
-      codeSnippet: "taskManager.collaborate();",
+      codeSnippet: "LearnBridge - Collaborative Study Platform();",
     },
     {
-      title: "Weather Dashboard",
+      title: "Serve-Together",
       description:
-        "A responsive weather application with location-based forecasts and interactive charts.",
-      image:
-        "https://images.pexels.com/photos/1118873/pexels-photo-1118873.jpeg?auto=compress&cs=tinysrgb&w=600",
-      technologies: ["React", "Chart.js", "Weather API"],
-      liveUrl: "https://weather-dashboard-react.netlify.app",
-      githubUrl: "https://github.com/jashedulislamshaun/weather-dashboard",
-      featured: false,
-      codeSnippet: "weather.forecast();",
+        "a user-friendly platform for volunteer management where a user can create a volunteer need post, update and delete a post, and a user can be a volunteer for others post.",
+      image: "https://i.ibb.co/0V6BFk3k/servetogether.png",
+      technologies: ["React", "Node.js", "MongoDB", "Express.js"],
+      liveUrl: "https://servetogether-e28be.web.app/#",
+      githubUrl: "https://github.com/Maptaul/ServeTogether-clinet",
+      featured: true,
+      codeSnippet: "ServeTogether();",
     },
     {
       title: "Portfolio Website",
@@ -52,7 +49,7 @@ const Projects = ({ isDarkMode }) => {
       codeSnippet: "portfolio.showcase();",
     },
     {
-      title: "Blog Platform",
+      title: " Blog Platform",
       description:
         "A full-stack blog platform with user authentication, rich text editor, and comment system.",
       image:
@@ -60,7 +57,7 @@ const Projects = ({ isDarkMode }) => {
       technologies: ["React", "Node.js", "MongoDB", "JWT"],
       liveUrl: "https://blog-platform-react.netlify.app",
       githubUrl: "https://github.com/jashedulislamshaun/blog-platform",
-      featured: true,
+      featured: false,
       codeSnippet: "blog.publish(content);",
     },
     {
