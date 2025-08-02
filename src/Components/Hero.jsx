@@ -6,7 +6,6 @@ import {
   ExternalLink,
   Github,
   Linkedin,
-  Sparkles,
   Terminal,
 } from "lucide-react";
 import { useEffect, useState } from "react";
@@ -54,9 +53,9 @@ const Hero = ({ isDarkMode }) => {
   ];
 
   const stats = [
-    { label: "Projects Completed", value: "500+", icon: <Code2 size={16} /> },
-    { label: "Happy Clients", value: "200+", icon: <Sparkles size={16} /> },
-    { label: "Years Experience", value: "5+", icon: <Terminal size={16} /> },
+    { label: "Projects Completed", value: "100+", icon: <Code2 size={16} /> },
+    // { label: "Happy Clients", value: "200+", icon: <Sparkles size={16} /> },
+    { label: "Years Experience", value: "2+", icon: <Terminal size={16} /> },
   ];
 
   return (
@@ -220,7 +219,7 @@ const Hero = ({ isDarkMode }) => {
             className="mb-8"
           >
             <div
-              className={`text-xl sm:text-2xl font-mono mb-4 transition-colors ${
+              className={`text-xl sm:text-2xl font-mono mb-4 transition-colors  ${
                 isDarkMode ? "text-dev-textSecondary" : "text-gray-600"
               }`}
             >
@@ -249,7 +248,7 @@ const Hero = ({ isDarkMode }) => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.7 }}
-            className="grid grid-cols-3 gap-6 max-w-2xl mx-auto mb-12"
+            className="grid grid-cols-2 items-center justify-center gap-6 max-w-2xl mx-auto mb-12"
           >
             {stats.map((stat, index) => (
               <motion.div
@@ -376,7 +375,7 @@ const Hero = ({ isDarkMode }) => {
               <span className="text-dev-comment">// </span>
               Status:{" "}
               <span className="text-secondary-500 font-semibold">
-                Available for new projects
+                Available for Hire
               </span>
             </span>
           </motion.div>
