@@ -1,0 +1,150 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    line-height: 1.6;
+  }
+}
+
+@layer components {
+  .section-padding {
+    @apply py-20;
+  }
+  
+  .container-max {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  
+  /* Code block styling */
+  .code-block {
+    @apply bg-dev-surface text-dev-text font-mono text-sm p-4 rounded-lg overflow-x-auto;
+  }
+  
+  /* Terminal-style elements */
+  .terminal {
+    @apply bg-dev-surface text-secondary-400 font-mono p-4 rounded-lg border border-dev-border;
+  }
+  
+  .terminal::before {
+    content: "$ ";
+    @apply text-secondary-500;
+  }
+}
+
+/* Custom scrollbar with smart dark theme */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: theme('colors.dark.100');
+}
+
+.dark ::-webkit-scrollbar-track {
+  background: theme('colors.dev.surface');
+}
+
+::-webkit-scrollbar-thumb {
+  background: theme('colors.primary.500');
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: theme('colors.primary.600');
+}
+
+/* Selection color with smart theme */
+::selection {
+  background-color: theme('colors.primary.500');
+  color: white;
+}
+
+.dark ::selection {
+  background-color: theme('colors.primary.400');
+  color: theme('colors.dev.bg');
+}
+
+/* Focus styles */
+.focus-visible:focus-visible {
+  outline: 2px solid theme('colors.primary.500');
+  outline-offset: 2px;
+}
+
+/* Typing animation */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: theme('colors.primary.500') }
+}
+
+.typing-animation {
+  overflow: hidden;
+  border-right: 2px solid theme('colors.primary.500');
+  white-space: nowrap;
+  animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+}
+
+/* Enhanced glow effect for dark mode */
+.glow {
+  box-shadow: 0 0 5px theme('colors.primary.500'), 
+              0 0 10px theme('colors.primary.500'), 
+              0 0 15px theme('colors.primary.500');
+}
+
+.dark .glow {
+  box-shadow: 0 0 10px theme('colors.primary.400'), 
+              0 0 20px theme('colors.primary.400'), 
+              0 0 30px theme('colors.primary.400');
+}
+
+/* Terminal cursor */
+.cursor::after {
+  content: "|";
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+/* Smooth transitions for theme switching */
+* {
+  transition-property: background-color, border-color, color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
+}
+
+/* Enhanced backdrop blur for better readability */
+.backdrop-blur-enhanced {
+  backdrop-filter: blur(12px) saturate(180%);
+  -webkit-backdrop-filter: blur(12px) saturate(180%);
+}
+
+/* Improved contrast for code elements */
+.dark .syntax-keyword { color: theme('colors.dev.keyword'); }
+.dark .syntax-string { color: theme('colors.dev.string'); }
+.dark .syntax-function { color: theme('colors.dev.function'); }
+.dark .syntax-variable { color: theme('colors.dev.variable'); }
+.dark .syntax-comment { color: theme('colors.dev.comment'); }
+.dark .syntax-number { color: theme('colors.dev.number'); }
+.dark .syntax-operator { color: theme('colors.dev.operator'); }
+
+.syntax-keyword { color: #e11d48; }
+.syntax-string { color: #059669; }
+.syntax-function { color: #7c3aed; }
+.syntax-variable { color: #d97706; }
+.syntax-comment { color: #6b7280; }
+.syntax-number { color: #2563eb; }
+.syntax-operator { color: #374151; }
