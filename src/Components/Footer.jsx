@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ExternalLink, Github, Linkedin } from "lucide-react";
+import { Facebook, Github, Linkedin } from "lucide-react";
 
 const Footer = ({ isDarkMode }) => {
   const currentYear = new Date().getFullYear();
@@ -18,7 +18,7 @@ const Footer = ({ isDarkMode }) => {
     {
       name: "Facebook",
       url: "https://www.facebook.com/Maptaul",
-      icon: <ExternalLink size={20} />,
+      icon: <Facebook size={20} />,
     },
   ];
 

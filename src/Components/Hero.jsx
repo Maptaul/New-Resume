@@ -3,7 +3,7 @@ import {
   ChevronDown,
   Code2,
   Download,
-  ExternalLink,
+  Facebook,
   Github,
   Linkedin,
   Terminal,
@@ -11,26 +11,41 @@ import {
 import { useEffect, useState } from "react";
 
 const Hero = ({ isDarkMode }) => {
+  const roles = [
+    "Frontend Developer | Web Developer",
+    "Full-Stack Developer | MERN Stack Specialist",
+  ];
+
   const [displayText, setDisplayText] = useState("");
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const [currentRoleIndex, setCurrentRoleIndex] = useState(0);
+  const [charIndex, setCharIndex] = useState(0);
   const [showCursor, setShowCursor] = useState(true);
-  const fullText = "Full Stack Developer | MERN Stack Specialist";
 
   useEffect(() => {
-    if (currentIndex < fullText.length) {
+    const currentRole = roles[currentRoleIndex];
+
+    if (charIndex < currentRole.length) {
       const timeout = setTimeout(() => {
-        setDisplayText((prev) => prev + fullText[currentIndex]);
-        setCurrentIndex((prev) => prev + 1);
-      }, 80);
+        setDisplayText((prev) => prev + currentRole[charIndex]);
+        setCharIndex((prev) => prev + 1);
+      }, 70);
       return () => clearTimeout(timeout);
     } else {
-      // Blink cursor after typing is complete
-      const cursorInterval = setInterval(() => {
-        setShowCursor((prev) => !prev);
-      }, 500);
-      return () => clearInterval(cursorInterval);
+      const pauseBeforeNext = setTimeout(() => {
+        setDisplayText("");
+        setCharIndex(0);
+        setCurrentRoleIndex((prev) => (prev + 1) % roles.length);
+      }, 2000);
+      return () => clearTimeout(pauseBeforeNext);
     }
-  }, [currentIndex, fullText]);
+  }, [charIndex, currentRoleIndex]);
+
+  useEffect(() => {
+    const cursorBlink = setInterval(() => {
+      setShowCursor((prev) => !prev);
+    }, 500);
+    return () => clearInterval(cursorBlink);
+  }, []);
 
   const socialLinks = [
     {
@@ -48,12 +63,16 @@ const Hero = ({ isDarkMode }) => {
     {
       name: "Facebook",
       url: "https://www.facebook.com/Maptaul",
-      icon: <ExternalLink size={20} />,
+      icon: <Facebook size={20} />,
     },
   ];
 
   const stats = [
-    { label: "Projects Completed", value: "100+", icon: <Code2 size={16} /> },
+    {
+      label: "P</svg>rojects Completed",
+      value: "100+",
+      icon: <Code2 size={16} />,
+    },
     // { label: "Happy Clients", value: "200+", icon: <Sparkles size={16} /> },
     { label: "Years Experience", value: "2+", icon: <Terminal size={16} /> },
   ];
