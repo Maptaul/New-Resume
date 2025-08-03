@@ -42,7 +42,7 @@ const Contact = ({ isDarkMode }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    fetch("https://formspree.io/f/movlnynq", {
+    fetch(import.meta.env.VITE_FORMSPREE_URL, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -260,7 +260,7 @@ const Contact = ({ isDarkMode }) => {
           >
             <form
               onSubmit={handleSubmit}
-              action="https://formspree.io/f/movlnynq"
+              action={import.meta.env.VITE_FORMSPREE_URL}
               method="POST"
               className="space-y-6"
             >
