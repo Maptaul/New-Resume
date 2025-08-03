@@ -19,7 +19,7 @@ const LoadingScreen = ({ isDarkMode }) => {
         transition={{ duration: 0.6, delay: 0.2 }}
         className="text-center"
       >
-        <div className="mb-8">
+        <div className="mb-8 flex items-center justify-center">
           <DotLoader color={isDarkMode ? "#60A5FA" : "#3B82F6"} size={80} />
         </div>
         <motion.div
