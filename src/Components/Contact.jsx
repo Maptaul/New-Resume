@@ -32,22 +32,47 @@ const Contact = ({ isDarkMode }) => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log("Form submitted:", formData);
-    setFormData({ name: "", email: "", subject: "", message: "" });
-    toast.success("Message sent successfully!", {
-      position: "top-center",
-      autoClose: 3000,
-      theme: isDarkMode ? "dark" : "light",
-    });
-  };
-
   const handleChange = (e) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
     });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    fetch("https://formspree.io/f/movlnynq", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: JSON.stringify(formData),
+    })
+      .then((res) => {
+        if (res.ok) {
+          toast.success("Message sent successfully!", {
+            position: "top-center",
+            autoClose: 3000,
+            theme: isDarkMode ? "dark" : "light",
+          });
+          setFormData({ name: "", email: "", subject: "", message: "" });
+        } else {
+          toast.error("Failed to send message.", {
+            position: "top-center",
+            autoClose: 3000,
+            theme: isDarkMode ? "dark" : "light",
+          });
+        }
+      })
+      .catch(() => {
+        toast.error("Something went wrong!", {
+          position: "top-center",
+          autoClose: 3000,
+          theme: isDarkMode ? "dark" : "light",
+        });
+      });
   };
 
   const contactInfo = [
@@ -240,26 +265,72 @@ const Contact = ({ isDarkMode }) => {
               className="space-y-6"
             >
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <div>
+                  <label
+                    htmlFor="name"
+                    className={`block text-sm font-medium mb-2 transition-colors ${
+                      isDarkMode ? "text-dev-textSecondary" : "text-gray-700"
+                    }`}
+                  >
+                    Full Name
+                  </label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    required
+                    placeholder="Your full name"
+                    className={`w-full px-4 py-3 border rounded-lg transition-colors ${
+                      isDarkMode
+                        ? "bg-dev-elevated border-dev-border text-dev-text placeholder-dev-textMuted"
+                        : "bg-white border-gray-300 text-gray-900 placeholder-gray-500"
+                    }`}
+                  />
+                </div>
+                <div>
+                  <label
+                    htmlFor="email"
+                    className={`block text-sm font-medium mb-2 transition-colors ${
+                      isDarkMode ? "text-dev-textSecondary" : "text-gray-700"
+                    }`}
+                  >
+                    Email Address
+                  </label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    required
+                    placeholder="your.email@example.com"
+                    className={`w-full px-4 py-3 border rounded-lg transition-colors ${
+                      isDarkMode
+                        ? "bg-dev-elevated border-dev-border text-dev-text placeholder-dev-textMuted"
+                        : "bg-white border-gray-300 text-gray-900 placeholder-gray-500"
+                    }`}
+                  />
+                </div>
+              </div>
+              <div>
+                <label
+                  htmlFor="subject"
+                  className={`block text-sm font-medium mb-2 transition-colors ${
+                    isDarkMode ? "text-dev-textSecondary" : "text-gray-700"
+                  }`}
+                >
+                  Subject
+                </label>
                 <input
                   type="text"
-                  name="name"
-                  value={formData.name}
+                  id="subject"
+                  name="subject"
+                  value={formData.subject}
                   onChange={handleChange}
                   required
-                  placeholder="Your full name"
-                  className={`w-full px-4 py-3 border rounded-lg transition-colors ${
-                    isDarkMode
-                      ? "bg-dev-elevated border-dev-border text-dev-text placeholder-dev-textMuted"
-                      : "bg-white border-gray-300 text-gray-900 placeholder-gray-500"
-                  }`}
-                />
-                <input
-                  type="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  required
-                  placeholder="your.email@example.com"
+                  placeholder="What's this about?"
                   className={`w-full px-4 py-3 border rounded-lg transition-colors ${
                     isDarkMode
                       ? "bg-dev-elevated border-dev-border text-dev-text placeholder-dev-textMuted"
@@ -267,32 +338,30 @@ const Contact = ({ isDarkMode }) => {
                   }`}
                 />
               </div>
-              <input
-                type="text"
-                name="subject"
-                value={formData.subject}
-                onChange={handleChange}
-                required
-                placeholder="What's this about?"
-                className={`w-full px-4 py-3 border rounded-lg transition-colors ${
-                  isDarkMode
-                    ? "bg-dev-elevated border-dev-border text-dev-text placeholder-dev-textMuted"
-                    : "bg-white border-gray-300 text-gray-900 placeholder-gray-500"
-                }`}
-              />
-              <textarea
-                name="message"
-                value={formData.message}
-                onChange={handleChange}
-                rows={6}
-                required
-                placeholder="Tell me about you or how I can help you..."
-                className={`w-full px-4 py-3 border rounded-lg resize-none transition-colors ${
-                  isDarkMode
-                    ? "bg-dev-elevated border-dev-border text-dev-text placeholder-dev-textMuted"
-                    : "bg-white border-gray-300 text-gray-900 placeholder-gray-500"
-                }`}
-              />
+              <div>
+                <label
+                  htmlFor="message"
+                  className={`block text-sm font-medium mb-2 transition-colors ${
+                    isDarkMode ? "text-dev-textSecondary" : "text-gray-700"
+                  }`}
+                >
+                  Message
+                </label>
+                <textarea
+                  id="message"
+                  name="message"
+                  value={formData.message}
+                  onChange={handleChange}
+                  rows={6}
+                  required
+                  placeholder="Tell me about you or how I can help you..."
+                  className={`w-full px-4 py-3 border rounded-lg resize-none transition-colors ${
+                    isDarkMode
+                      ? "bg-dev-elevated border-dev-border text-dev-text placeholder-dev-textMuted"
+                      : "bg-white border-gray-300 text-gray-900 placeholder-gray-500"
+                  }`}
+                />
+              </div>
               <motion.button
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
