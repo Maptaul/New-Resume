@@ -12,7 +12,7 @@ const Projects = ({ isDarkMode }) => {
       liveUrl: "https://ctggrievance.vercel.app",
       githubUrl: "https://github.com/Maptaul/Grievance-",
       featured: true,
-      codeSnippet: "const ctggrievance = new Platform();",
+      codeSnippet: "GrievanceRedressSystem();",
     },
     {
       title: "LearnBridge - Collaborative Study Platform",
@@ -43,34 +43,32 @@ const Projects = ({ isDarkMode }) => {
       image:
         "https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=600",
       technologies: ["React", "Tailwind CSS", "Framer Motion"],
-      liveUrl: "https://jashedul-portfolio.netlify.app",
-      githubUrl: "https://github.com/jashedulislamshaun/portfolio",
+      liveUrl: "#",
+      githubUrl: "#",
       featured: false,
       codeSnippet: "portfolio.showcase();",
     },
     {
-      title: " Blog Platform",
+      title: "Gamelense",
       description:
-        "A full-stack blog platform with user authentication, rich text editor, and comment system.",
-      image:
-        "https://images.pexels.com/photos/267350/pexels-photo-267350.jpeg?auto=compress&cs=tinysrgb&w=600",
+        "Chill Gamer, a user-friendly game review application. The goal of this project is to design a platform where users can explore and share game reviews. Users can also create, update, and delete their reviews.",
+      image: "https://i.ibb.co/0PJ8ynv/image.png",
       technologies: ["React", "Node.js", "MongoDB", "JWT"],
-      liveUrl: "https://blog-platform-react.netlify.app",
-      githubUrl: "https://github.com/jashedulislamshaun/blog-platform",
+      liveUrl: "https://gamelense-fc12c.web.app/",
+      githubUrl: "https://github.com/Maptaul/Game-lense-client",
       featured: false,
-      codeSnippet: "blog.publish(content);",
+      codeSnippet: "gamelense.review();",
     },
     {
-      title: "Expense Tracker",
+      title: "Bangla Voucher",
       description:
-        "A personal finance management app with expense tracking, budgeting, and financial insights.",
-      image:
-        "https://images.pexels.com/photos/164527/pexels-photo-164527.jpeg?auto=compress&cs=tinysrgb&w=600",
+        "Discount PRO is a Coupon Collecting Application designed to help users easily find and use discount coupons for popular e-commerce shops in Bangladesh.",
+      image: "https://i.ibb.co/xS4YmWfG/image.png",
       technologies: ["React", "Chart.js", "Local Storage"],
-      liveUrl: "https://expense-tracker-react.netlify.app",
-      githubUrl: "https://github.com/jashedulislamshaun/expense-tracker",
+      liveUrl: "https://banglavoucher.web.app/#slide2",
+      githubUrl: "https://github.com/Maptaul/BanglaVoucher",
       featured: false,
-      codeSnippet: "expenses.track();",
+      codeSnippet: "DiscountPRO.coupons();",
     },
   ];
 
@@ -141,7 +139,7 @@ const Projects = ({ isDarkMode }) => {
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500"
+                  className="w-full h-48 object-fit group-hover:scale-105 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center space-x-4">
                   <motion.a

@@ -75,7 +75,7 @@ const Contact = ({ isDarkMode }) => {
             >
               =
             </span>{" "}
-            <span className="text-dev-string">"Get In Touch"</span>
+            <span className="text-dev-string">"Contact Me"</span>
           </h2>
           <div className="w-20 h-1 bg-primary-500 mx-auto mb-6"></div>
           <p
@@ -84,8 +84,8 @@ const Contact = ({ isDarkMode }) => {
             }`}
           >
             <span className="text-dev-comment">/* </span>
-            Have a project in mind or just want to chat? I'd love to hear from
-            you. Let's create something amazing together!
+            Interested in working together or have a question? Feel free to
+            reach out and I'll get back to you as soon as possible!
             <span className="text-dev-comment"> */</span>
           </p>
         </motion.div>
@@ -103,7 +103,7 @@ const Contact = ({ isDarkMode }) => {
                 isDarkMode ? "text-dev-text" : "text-gray-900"
               }`}
             >
-              <span className="text-dev-comment">// </span>Let's Talk
+              <span className="text-dev-comment">// </span>Let's Connect
             </h3>
             <div className="space-y-6 mb-8">
               {contactInfo.map((item, index) => (
@@ -168,15 +168,15 @@ const Contact = ({ isDarkMode }) => {
                   isDarkMode ? "text-dev-text" : "text-gray-900"
                 }`}
               >
-                Quick Response
+                Fast Replies
               </h4>
               <p
                 className={`text-sm mb-4 transition-colors ${
                   isDarkMode ? "text-dev-textMuted" : "text-gray-600"
                 }`}
               >
-                I typically respond to messages within 2-4 hours during business
-                hours. For urgent matters, feel free to reach out via WhatsApp.
+                I usually respond within a few hours during the day. For urgent
+                matters, please use WhatsApp.
               </p>
               <div className="flex space-x-4">
                 <motion.a
@@ -314,7 +314,7 @@ const Contact = ({ isDarkMode }) => {
                       ? "bg-dev-elevated border-dev-border text-dev-text placeholder-dev-textMuted"
                       : "bg-white border-gray-300 text-gray-900 placeholder-gray-500"
                   }`}
-                  placeholder="Tell me about your project or how I can help you..."
+                  placeholder="Tell me about you or how I can help you..."
                 />
               </div>
 
