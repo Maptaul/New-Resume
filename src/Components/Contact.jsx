@@ -1,6 +1,14 @@
 import { motion } from "framer-motion";
-import { Mail, MapPin, MessageCircle, Phone, Send } from "lucide-react";
-import { useState } from "react";
+import {
+  ArrowUp,
+  Mail,
+  MapPin,
+  MessageCircle,
+  Phone,
+  Send,
+} from "lucide-react";
+import { useEffect, useState } from "react";
+import { toast } from "react-toastify";
 
 const Contact = ({ isDarkMode }) => {
   const [formData, setFormData] = useState({
@@ -9,6 +17,38 @@ const Contact = ({ isDarkMode }) => {
     subject: "",
     message: "",
   });
+
+  const [showGoToTop, setShowGoToTop] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setShowGoToTop(window.scrollY > 300);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log("Form submitted:", formData);
+    setFormData({ name: "", email: "", subject: "", message: "" });
+    toast.success("Message sent successfully!", {
+      position: "top-center",
+      autoClose: 3000,
+      theme: isDarkMode ? "dark" : "light",
+    });
+  };
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
 
   const contactInfo = [
     {
@@ -31,30 +71,15 @@ const Contact = ({ isDarkMode }) => {
     },
   ];
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Handle form submission (you can integrate with a backend service)
-    console.log("Form submitted:", formData);
-    // Reset form
-    setFormData({ name: "", email: "", subject: "", message: "" });
-    alert("Message sent successfully! I'll get back to you soon.");
-  };
-
-  const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
-  };
-
   return (
     <section
       id="contact"
       className={`py-20 transition-colors duration-300 ${
         isDarkMode ? "bg-dev-surface" : "bg-white"
-      }`}
+      } relative`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Heading */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -63,7 +88,7 @@ const Contact = ({ isDarkMode }) => {
           className="text-center mb-16"
         >
           <h2
-            className={`text-3xl sm:text-4xl font-bold mb-6 font-mono transition-colors ${
+            className={`text-3xl sm:text-4xl font-bold mb-6 font-mono ${
               isDarkMode ? "text-dev-text" : "text-gray-900"
             }`}
           >
@@ -79,7 +104,7 @@ const Contact = ({ isDarkMode }) => {
           </h2>
           <div className="w-20 h-1 bg-primary-500 mx-auto mb-6"></div>
           <p
-            className={`text-lg max-w-2xl mx-auto font-mono transition-colors ${
+            className={`text-lg max-w-2xl mx-auto font-mono ${
               isDarkMode ? "text-dev-textMuted" : "text-gray-600"
             }`}
           >
@@ -91,7 +116,7 @@ const Contact = ({ isDarkMode }) => {
         </motion.div>
 
         <div className="grid lg:grid-cols-2 gap-12">
-          {/* Contact Information */}
+          {/* Contact Info */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -99,21 +124,21 @@ const Contact = ({ isDarkMode }) => {
             viewport={{ once: true }}
           >
             <h3
-              className={`text-2xl font-bold mb-8 font-mono transition-colors ${
+              className={`text-2xl font-bold mb-8 font-mono ${
                 isDarkMode ? "text-dev-text" : "text-gray-900"
               }`}
             >
               <span className="text-dev-comment">// </span>Let's Connect
             </h3>
             <div className="space-y-6 mb-8">
-              {contactInfo.map((item, index) => (
+              {contactInfo.map((item) => (
                 <motion.div
                   key={item.label}
                   whileHover={{ x: 5 }}
                   className="flex items-center space-x-4"
                 >
                   <div
-                    className={`flex-shrink-0 w-12 h-12 rounded-lg flex items-center justify-center transition-colors ${
+                    className={`w-12 h-12 rounded-lg flex items-center justify-center ${
                       isDarkMode
                         ? "bg-primary-500/20 text-primary-400"
                         : "bg-primary-100 text-primary-600"
@@ -123,7 +148,7 @@ const Contact = ({ isDarkMode }) => {
                   </div>
                   <div>
                     <p
-                      className={`text-sm transition-colors ${
+                      className={`text-sm ${
                         isDarkMode ? "text-dev-textMuted" : "text-gray-500"
                       }`}
                     >
@@ -134,7 +159,7 @@ const Contact = ({ isDarkMode }) => {
                         href={item.href}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className={`font-medium transition-colors ${
+                        className={`font-medium ${
                           isDarkMode
                             ? "text-dev-text hover:text-primary-400"
                             : "text-gray-900 hover:text-primary-600"
@@ -144,7 +169,7 @@ const Contact = ({ isDarkMode }) => {
                       </a>
                     ) : (
                       <p
-                        className={`font-medium transition-colors ${
+                        className={`font-medium ${
                           isDarkMode ? "text-dev-text" : "text-gray-900"
                         }`}
                       >
@@ -157,21 +182,21 @@ const Contact = ({ isDarkMode }) => {
             </div>
 
             <div
-              className={`rounded-xl p-6 border transition-colors ${
+              className={`rounded-xl p-6 border ${
                 isDarkMode
                   ? "bg-dev-elevated border-dev-border"
                   : "bg-gradient-to-br from-primary-50 to-secondary-50 border-gray-200"
               }`}
             >
               <h4
-                className={`font-semibold mb-3 transition-colors ${
+                className={`font-semibold mb-3 ${
                   isDarkMode ? "text-dev-text" : "text-gray-900"
                 }`}
               >
                 Fast Replies
               </h4>
               <p
-                className={`text-sm mb-4 transition-colors ${
+                className={`text-sm mb-4 ${
                   isDarkMode ? "text-dev-textMuted" : "text-gray-600"
                 }`}
               >
@@ -183,9 +208,7 @@ const Contact = ({ isDarkMode }) => {
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   href="https://wa.me/8801846035436"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center px-4 py-2 bg-green-600 text-white rounded-lg text-sm font-medium hover:bg-green-700 transition-colors"
+                  className="flex items-center px-4 py-2 bg-green-600 text-white rounded-lg text-sm font-medium hover:bg-green-700"
                 >
                   <MessageCircle size={16} className="mr-2" />
                   WhatsApp
@@ -194,7 +217,7 @@ const Contact = ({ isDarkMode }) => {
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   href="mailto:maptaul912@gmail.com"
-                  className="flex items-center px-4 py-2 bg-primary-600 text-white rounded-lg text-sm font-medium hover:bg-primary-700 transition-colors"
+                  className="flex items-center px-4 py-2 bg-primary-600 text-white rounded-lg text-sm font-medium hover:bg-primary-700"
                 >
                   <Mail size={16} className="mr-2" />
                   Email
@@ -211,118 +234,70 @@ const Contact = ({ isDarkMode }) => {
             viewport={{ once: true }}
           >
             <form
-              netlify
               onSubmit={handleSubmit}
-              className="space-y-6"
-              action="https://formspree.io/f/meokvyze"
+              action="https://formspree.io/f/movlnynq"
               method="POST"
+              className="space-y-6"
             >
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                <div>
-                  <label
-                    htmlFor="name"
-                    className={`block text-sm font-medium mb-2 transition-colors ${
-                      isDarkMode ? "text-dev-textSecondary" : "text-gray-700"
-                    }`}
-                  >
-                    Full Name
-                  </label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    required
-                    className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-colors ${
-                      isDarkMode
-                        ? "bg-dev-elevated border-dev-border text-dev-text placeholder-dev-textMuted"
-                        : "bg-white border-gray-300 text-gray-900 placeholder-gray-500"
-                    }`}
-                    placeholder="Your full name"
-                  />
-                </div>
-                <div>
-                  <label
-                    htmlFor="email"
-                    className={`block text-sm font-medium mb-2 transition-colors ${
-                      isDarkMode ? "text-dev-textSecondary" : "text-gray-700"
-                    }`}
-                  >
-                    Email Address
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    required
-                    className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-colors ${
-                      isDarkMode
-                        ? "bg-dev-elevated border-dev-border text-dev-text placeholder-dev-textMuted"
-                        : "bg-white border-gray-300 text-gray-900 placeholder-gray-500"
-                    }`}
-                    placeholder="your.email@example.com"
-                  />
-                </div>
-              </div>
-
-              <div>
-                <label
-                  htmlFor="subject"
-                  className={`block text-sm font-medium mb-2 transition-colors ${
-                    isDarkMode ? "text-dev-textSecondary" : "text-gray-700"
-                  }`}
-                >
-                  Subject
-                </label>
                 <input
                   type="text"
-                  id="subject"
-                  name="subject"
-                  value={formData.subject}
+                  name="name"
+                  value={formData.name}
                   onChange={handleChange}
                   required
-                  className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-colors ${
+                  placeholder="Your full name"
+                  className={`w-full px-4 py-3 border rounded-lg transition-colors ${
                     isDarkMode
                       ? "bg-dev-elevated border-dev-border text-dev-text placeholder-dev-textMuted"
                       : "bg-white border-gray-300 text-gray-900 placeholder-gray-500"
                   }`}
-                  placeholder="What's this about?"
                 />
-              </div>
-
-              <div>
-                <label
-                  htmlFor="message"
-                  className={`block text-sm font-medium mb-2 transition-colors ${
-                    isDarkMode ? "text-dev-textSecondary" : "text-gray-700"
-                  }`}
-                >
-                  Message
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  value={formData.message}
+                <input
+                  type="email"
+                  name="email"
+                  value={formData.email}
                   onChange={handleChange}
                   required
-                  rows={6}
-                  className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-colors resize-none ${
+                  placeholder="your.email@example.com"
+                  className={`w-full px-4 py-3 border rounded-lg transition-colors ${
                     isDarkMode
                       ? "bg-dev-elevated border-dev-border text-dev-text placeholder-dev-textMuted"
                       : "bg-white border-gray-300 text-gray-900 placeholder-gray-500"
                   }`}
-                  placeholder="Tell me about you or how I can help you..."
                 />
               </div>
-
+              <input
+                type="text"
+                name="subject"
+                value={formData.subject}
+                onChange={handleChange}
+                required
+                placeholder="What's this about?"
+                className={`w-full px-4 py-3 border rounded-lg transition-colors ${
+                  isDarkMode
+                    ? "bg-dev-elevated border-dev-border text-dev-text placeholder-dev-textMuted"
+                    : "bg-white border-gray-300 text-gray-900 placeholder-gray-500"
+                }`}
+              />
+              <textarea
+                name="message"
+                value={formData.message}
+                onChange={handleChange}
+                rows={6}
+                required
+                placeholder="Tell me about you or how I can help you..."
+                className={`w-full px-4 py-3 border rounded-lg resize-none transition-colors ${
+                  isDarkMode
+                    ? "bg-dev-elevated border-dev-border text-dev-text placeholder-dev-textMuted"
+                    : "bg-white border-gray-300 text-gray-900 placeholder-gray-500"
+                }`}
+              />
               <motion.button
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
                 type="submit"
-                className="w-full flex items-center justify-center px-8 py-4 bg-primary-600 text-white font-semibold rounded-lg hover:bg-primary-700 transition-colors"
+                className="w-full flex items-center justify-center px-8 py-4 bg-primary-600 text-white font-semibold rounded-lg hover:bg-primary-700"
               >
                 <Send size={20} className="mr-2" />
                 <span className="font-mono">
@@ -333,6 +308,18 @@ const Contact = ({ isDarkMode }) => {
           </motion.div>
         </div>
       </div>
+
+      {/* Go to Top Button */}
+      {showGoToTop && (
+        <motion.button
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.9 }}
+          onClick={scrollToTop}
+          className="fixed bottom-6 right-6 z-50 p-3 rounded-full bg-primary-600 text-white shadow-lg hover:bg-primary-700"
+        >
+          <ArrowUp size={20} />
+        </motion.button>
+      )}
     </section>
   );
 };
