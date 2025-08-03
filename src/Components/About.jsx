@@ -70,17 +70,21 @@ const About = ({ isDarkMode }) => {
             viewport={{ once: true }}
           >
             <div
-              className={`prose prose-lg leading-relaxed transition-colors ${
+              className={`prose prose-lg leading-relaxed transition-colors text-justify ${
                 isDarkMode ? "text-dev-textSecondary" : "text-gray-600"
               }`}
             >
               <p className="text-xl mb-6">
-                Hi, I&apos;m Maptaul Islam Taraq, a passionate frontend
-                developer with a love for creating visually appealing and
-                user-friendly web experiences. With a strong foundation in HTML,
-                CSS, JavaScript, React, Node.js, Express.js, MongoDB, and
-                GitHub, I specialize in building responsive websites that not
-                only look great but also provide a seamless user experience.
+                Hi, I&apos;m{" "}
+                <span className="text-primary-500 font-extrabold">
+                  Maptaul Islam Taraq
+                </span>
+                , a passionate frontend developer with a love for creating
+                visually appealing and user-friendly web experiences. With a
+                strong foundation in HTML, CSS, JavaScript, React, Node.js,
+                Express.js, MongoDB, and GitHub, I specialize in building
+                responsive websites that not only look great but also provide a
+                seamless user experience.
               </p>
               <p className="mb-6">
                 Over the years, I&apos;ve honed my skills by working on a
