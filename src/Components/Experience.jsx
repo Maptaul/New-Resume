@@ -207,7 +207,7 @@ const Experience = ({ isDarkMode }) => {
                         {stat.icon}
                       </div>
                       <div
-                        className={`text-xl font-bold transition-colors ${
+                        className={`sm:text-xs md:text-xl font-bold transition-colors ${
                           isDarkMode ? "text-dev-text" : "text-gray-900"
                         }`}
                       >

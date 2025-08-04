@@ -78,6 +78,7 @@ function App() {
     >
       <Header
         activeSection={activeSection}
+        setActiveSection={setActiveSection}
         isDarkMode={isDarkMode}
         setIsDarkMode={setIsDarkMode}
       />

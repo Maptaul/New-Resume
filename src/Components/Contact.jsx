@@ -1,12 +1,5 @@
 import { motion } from "framer-motion";
-import {
-  ArrowUp,
-  Mail,
-  MapPin,
-  MessageCircle,
-  Phone,
-  Send,
-} from "lucide-react";
+import { Mail, MapPin, MessageCircle, Phone, Send } from "lucide-react";
 import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 
@@ -379,7 +372,7 @@ const Contact = ({ isDarkMode }) => {
       </div>
 
       {/* Go to Top Button */}
-      {showGoToTop && (
+      {/* {showGoToTop && (
         <motion.button
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
@@ -388,7 +381,7 @@ const Contact = ({ isDarkMode }) => {
         >
           <ArrowUp size={20} />
         </motion.button>
-      )}
+      )} */}
     </section>
   );
 };

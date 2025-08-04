@@ -70,7 +70,7 @@ const About = ({ isDarkMode }) => {
             viewport={{ once: true }}
           >
             <div
-              className={`prose prose-lg leading-relaxed transition-colors text-justify ${
+              className={`prose prose-lg leading-relaxed transition-colors  ${
                 isDarkMode ? "text-dev-textSecondary" : "text-gray-600"
               }`}
             >
