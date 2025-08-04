@@ -35,7 +35,7 @@ const Hero = ({ isDarkMode }) => {
         setDisplayText("");
         setCharIndex(0);
         setCurrentRoleIndex((prev) => (prev + 1) % roles.length);
-      }, 2000);
+      }, 3000);
       return () => clearTimeout(pauseBeforeNext);
     }
   }, [charIndex, currentRoleIndex]);
@@ -235,16 +235,16 @@ const Hero = ({ isDarkMode }) => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.5 }}
-            className="mb-8"
+            className="mb-8 px-4"
           >
             <div
-              className={`text-xl sm:text-2xl font-mono mb-4 transition-colors  ${
+              className={`text-xl sm:text-2xl font-mono mb-4 transition-colors ${
                 isDarkMode ? "text-dev-textSecondary" : "text-gray-600"
-              }`}
+              } h-[3.5rem] sm:h-[4rem] flex items-center justify-center text-center`}
             >
-              <span className="text-dev-comment">// </span>
+              {/* <span className="text-dev-comment">// </span> */}
               <span className="border-r-2 border-primary-500">
-                {displayText}
+                // {displayText}
                 {showCursor && <span className="animate-pulse">|</span>}
               </span>
             </div>
