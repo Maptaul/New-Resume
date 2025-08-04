@@ -69,7 +69,7 @@ const Hero = ({ isDarkMode }) => {
 
   const stats = [
     {
-      label: "P</svg>rojects Completed",
+      label: "Projects Completed",
       value: "100+",
       icon: <Code2 size={16} />,
     },
