@@ -139,7 +139,7 @@ const Projects = ({ isDarkMode }) => {
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-48 object-fit group-hover:scale-105 transition-transform duration-500"
+                  className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center space-x-4">
                   <motion.a
