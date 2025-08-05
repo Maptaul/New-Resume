@@ -29,14 +29,13 @@ const Header = ({
   };
 
   return (
-    <div className="fixed bottom-8 left-0 w-full z-50 flex justify-center">
+    <div className="fixed bottom-8 left-0 w-full z-50 flex justify-center shadow-lg backdrop-blur-md">
       <motion.nav
         initial={{ y: 20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
-        className={`  px-4 py-2 rounded-full shadow-lg backdrop-blur-md flex items-center justify-center gap-2 z-50 
-        ${
-          isDarkMode ? "bg-gray-900/80 text-white" : "bg-white/80 text-gray-800"
-        }`}
+        className={`px-4 py-2 rounded-full shadow-lg flex items-center justify-center gap-2 z-50
+        bg-transparent backdrop-blur-md
+        ${isDarkMode ? "text-white" : "text-gray-800"}`}
       >
         {navItems.map((item) => (
           <motion.button

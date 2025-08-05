@@ -188,7 +188,7 @@ const Experience = ({ isDarkMode }) => {
                     </p>
                   </div>
                   <div
-                    className={`px-3 py-1 ${colors.badge} text-white rounded-full text-sm font-medium`}
+                    className={`px-3 py-1 ${colors.badge} text-white rounded-full text-sm text-center font-medium`}
                   >
                     {experience.badge}
                   </div>
