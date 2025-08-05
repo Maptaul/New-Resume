@@ -29,7 +29,7 @@ const Header = ({
   };
 
   return (
-    <div className="fixed bottom-8 left-0 w-full z-50 flex justify-center shadow-lg backdrop-blur-md">
+    <div className="fixed bottom-8 left-0 w-full z-50 flex justify-center ">
       <motion.nav
         initial={{ y: 20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
