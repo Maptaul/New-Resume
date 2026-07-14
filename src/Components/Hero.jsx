@@ -12,8 +12,9 @@ import { useEffect, useState } from "react";
 
 const Hero = ({ isDarkMode }) => {
   const roles = [
-    "Frontend Developer | Web Developer",
-    "Full-Stack Developer | MERN Stack Specialist",
+    "Head of Technical Team @ WioCare",
+    "Full-Stack JavaScript Engineer",
+    "Building AI-Powered Healthcare Systems",
   ];
 
   const [displayText, setDisplayText] = useState("");
@@ -255,9 +256,10 @@ const Hero = ({ isDarkMode }) => {
               }`}
             >
               <span className="font-mono text-dev-comment">/* </span>
-              Passionate about creating exceptional digital experiences with
-              modern web technologies. Specialized in building scalable web
-              applications.
+              Leading the engineering team at WioCare, building AI-powered
+              healthcare systems that improve lives. Specialized in scalable
+              full-stack JavaScript applications — Next.js, React, Node.js
+              &amp; TypeScript.
               <span className="font-mono text-dev-comment"> */</span>
             </p>
           </motion.div>

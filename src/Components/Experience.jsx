@@ -4,11 +4,48 @@ import { Award, Clock, Star, Users } from "lucide-react";
 const Experience = ({ isDarkMode }) => {
   const experiences = [
     {
+      company: "WioCare",
+      position: "Head of Technical Team",
+      location: "Chattogram, BD",
+      duration: "10/25 – Present",
+      badge: "Current",
+      stats: [
+        {
+          icon: <Users size={20} />,
+          label: "Leadership",
+          value: "Team Lead",
+          color: "text-blue-600",
+        },
+        {
+          icon: <Award size={20} />,
+          label: "Domain",
+          value: "HealthTech",
+          color: "text-green-600",
+        },
+        {
+          icon: <Star size={20} />,
+          label: "Focus",
+          value: "Architecture",
+          color: "text-yellow-600",
+        },
+      ],
+      description:
+        "Leading the technical vision and engineering execution at WioCare — an AI-powered digital healthcare platform serving real patients in production.",
+      achievements: [
+        "Leading the engineering team — task assignment, code review, mentoring, and clear technical direction",
+        "Architecting healthcare modules: ambulance dispatch with geo-tracking, pharmacy POS & delivery, and lab booking with automated reports",
+        "Building scalable systems with Next.js, Node.js, Express, and JavaScript/TypeScript",
+        "Implementing real-time notifications (Socket.IO, FCM), secure authentication with RBAC, and payment integration",
+        "Improving performance and reliability while helping the team grow through collaboration",
+      ],
+      color: "primary",
+    },
+    {
       company: "Jionex IT",
       position: "Frontend Developer",
       location: "Chattogram, BD",
       duration: "02/25 – Present",
-      badge: "Current",
+      badge: "1.5+ Years",
       stats: [
         {
           icon: <Award size={20} />,

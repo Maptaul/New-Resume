@@ -65,9 +65,9 @@ const Footer = ({ isDarkMode }) => {
                 isDarkMode ? "text-dev-textSecondary" : "text-gray-300"
               }`}
             >
-              Full Stack Developer passionate about creating exceptional digital
-              experiences. Specialized in React, Node.js, and modern web
-              technologies.
+              Head of Technical Team at WioCare &amp; Full Stack JavaScript
+              Engineer — building AI-powered healthcare systems with Next.js,
+              React, and Node.js.
             </motion.p>
             <motion.div
               initial={{ opacity: 0, y: 20 }}

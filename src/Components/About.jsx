@@ -7,7 +7,7 @@ const About = ({ isDarkMode }) => {
       icon: <Code size={24} />,
       title: "Tech Journey",
       description:
-        "Frontend developer specializing in React.js, Node.js, and modern web technologies",
+        "Full-stack JavaScript engineer — Next.js, React, Node.js, Express, TypeScript, MongoDB & Firebase",
     },
     {
       icon: <GraduationCap size={24} />,
@@ -25,7 +25,7 @@ const About = ({ isDarkMode }) => {
       icon: <Trophy size={24} />,
       title: "Experience",
       description:
-        "Currently working as Frontend Developer at Jionex IT, building modern web applications",
+        "Head of Technical Team at WioCare — leading engineers building AI-powered healthcare solutions",
     },
   ];
 
@@ -80,20 +80,19 @@ const About = ({ isDarkMode }) => {
                 <span className="text-primary-500 font-extrabold">
                   Maptaul Islam Taraq
                 </span>
-                , a passionate frontend developer with a love for creating
-                visually appealing and user-friendly web experiences. With a
-                strong foundation in HTML, CSS, JavaScript, React, Node.js,
-                Express.js, MongoDB, and GitHub, I specialize in building
-                responsive websites that not only look great but also provide a
-                seamless user experience.
+                , Head of Technical Team at WioCare, where we build AI-powered
+                digital healthcare solutions — ambulance dispatch with live
+                geo-tracking, pharmacy POS &amp; delivery, lab booking with
+                automated reports, and real-time notifications &amp; payments,
+                all running in production.
               </p>
               <p className="mb-6">
-                Over the years, I&apos;ve honed my skills by working on a
-                variety of projects, from simple landing pages to complex web
-                applications. My goal is to turn creative ideas into functional,
-                engaging digital products. Currently, I&apos;m working as a
-                Frontend Developer at Jionex IT, where I develop and maintain
-                modern web applications using cutting-edge technologies.
+                As a full-stack JavaScript engineer, I design scalable
+                architectures with Next.js, React, Node.js, Express, and
+                TypeScript — REST APIs, JWT auth with role-based access
+                control, Socket.IO real-time systems, and payment integrations.
+                I lead the engineering team through code reviews, mentoring,
+                and clear technical direction.
               </p>
               <p className="mb-6">
                 My educational background includes an MBA in Accounting from
