@@ -4,6 +4,17 @@ import { Code2, ExternalLink, Folder, Github, Terminal } from "lucide-react";
 const Projects = ({ isDarkMode }) => {
   const projects = [
     {
+      title: "WioCare — AI Healthcare Platform",
+      description:
+        "AI-powered digital healthcare ecosystem I lead as Head of Technical Team — ambulance dispatch with live geo-tracking, pharmacy POS & medicine delivery, lab booking with automated reports, real-time notifications & payments, all in production.",
+      image: "https://image.thum.io/get/width/800/https://wiocare.com/",
+      technologies: ["Next.js", "Node.js", "Express", "Socket.IO", "FCM"],
+      liveUrl: "https://wiocare.com",
+      githubUrl: "#",
+      featured: true,
+      codeSnippet: "WioCare.healthcare();",
+    },
+    {
       title: "Grievance Redress System",
       description:
         "Complaint Management System The Complaint Management System is a web application that enables citizens to submit and track grievances while providing administrators with tools to manage and resolve complaints efficiently.",
@@ -43,10 +54,32 @@ const Projects = ({ isDarkMode }) => {
       image:
         "https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=600",
       technologies: ["React", "Tailwind CSS", "Framer Motion"],
-      liveUrl: "https://maptaul.vercel.app",
-      githubUrl: "#",
+      liveUrl: "https://www.maptaul.me",
+      githubUrl: "https://github.com/Maptaul/New-Resume",
       featured: false,
       codeSnippet: "portfolio.showcase();",
+    },
+    {
+      title: "DevPulse",
+      description:
+        "Developer productivity & insights platform built with a TypeScript-first stack — tracking activity and surfacing metrics for engineering teams.",
+      image: "",
+      technologies: ["TypeScript", "Next.js", "Node.js"],
+      liveUrl: "https://github.com/Maptaul/devpulse-frontend",
+      githubUrl: "https://github.com/Maptaul/DevPulse",
+      featured: false,
+      codeSnippet: "devpulse.track();",
+    },
+    {
+      title: "FixItNow",
+      description:
+        "Service-booking backend with clean modular architecture — TypeScript, Express, and a repository-pattern service layer.",
+      image: "",
+      technologies: ["TypeScript", "Node.js", "Express"],
+      liveUrl: "https://github.com/Maptaul/FixItNow-Backend",
+      githubUrl: "https://github.com/Maptaul/FixItNow-Backend",
+      featured: false,
+      codeSnippet: "fixItNow.book();",
     },
     {
       title: "Gamelense",

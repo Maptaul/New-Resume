@@ -27,7 +27,9 @@ const Skills = ({ isDarkMode }) => {
         { name: "Node.js", level: 85, syntax: 'require("node")' },
         { name: "Express.js", level: 82, syntax: 'app.get("/")' },
         { name: "REST APIs", level: 88, syntax: "GET /api/data" },
-        { name: "JWT Auth", level: 80, syntax: "jwt.sign({})" },
+        { name: "JWT Auth & RBAC", level: 80, syntax: "jwt.sign({})" },
+        { name: "Socket.IO", level: 78, syntax: 'io.on("connect")' },
+        { name: "Prisma ORM", level: 75, syntax: "prisma.user.findMany()" },
       ],
     },
     {
@@ -38,7 +40,7 @@ const Skills = ({ isDarkMode }) => {
       skills: [
         { name: "MongoDB", level: 85, syntax: "db.find({})" },
         { name: "Firebase", level: 80, syntax: "firebase.init()" },
-        // { name: 'MySQL', level: 75, syntax: 'SELECT * FROM' }
+        { name: "PostgreSQL", level: 72, syntax: "SELECT * FROM users;" },
       ],
     },
     {
@@ -51,6 +53,8 @@ const Skills = ({ isDarkMode }) => {
         { name: "VS Code", level: 95, syntax: "code ." },
         { name: "Figma", level: 78, syntax: "design.create()" },
         { name: "Postman", level: 85, syntax: "POST /test" },
+        { name: "Docker", level: 60, syntax: "docker compose up" },
+        { name: "Vercel", level: 88, syntax: "vercel --prod" },
       ],
     },
   ];

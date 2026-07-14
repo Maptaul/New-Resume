@@ -75,7 +75,7 @@ const Hero = ({ isDarkMode }) => {
       icon: <Code2 size={16} />,
     },
     // { label: "Happy Clients", value: "200+", icon: <Sparkles size={16} /> },
-    { label: "Years Experience", value: "2+", icon: <Terminal size={16} /> },
+    { label: "Years Experience", value: "3+", icon: <Terminal size={16} /> },
   ];
 
   return (
