@@ -35,7 +35,7 @@ const Contact = ({ isDarkMode }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    fetch(import.meta.env.VITE_FORMSPREE_URL, {
+    fetch("/api/contact", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -251,12 +251,7 @@ const Contact = ({ isDarkMode }) => {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <form
-              onSubmit={handleSubmit}
-              action={import.meta.env.VITE_FORMSPREE_URL}
-              method="POST"
-              className="space-y-6"
-            >
+            <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <div>
                   <label
