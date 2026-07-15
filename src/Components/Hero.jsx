@@ -315,7 +315,7 @@ const Hero = ({ isDarkMode }) => {
                 boxShadow: "0 10px 30px rgba(59, 130, 246, 0.3)",
               }}
               whileTap={{ scale: 0.95 }}
-              href="/Maptaul Islam-Full Stack Developer.pdf"
+              href="/Maptaul Islam-Full Stack Engineer.pdf"
               download
               className="group inline-flex items-center px-8 py-4 bg-gradient-to-r from-primary-600 to-primary-700 text-white font-mono font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all"
             >
