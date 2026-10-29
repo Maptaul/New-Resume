@@ -91,12 +91,12 @@ const Projects = ({ isDarkMode }) => {
       codeSnippet: "devpulse.track();",
     },
     {
-      title: "FixItNow",
+      title: "FixItNow — Home Services Marketplace",
       description:
-        "Service-booking backend with clean modular architecture — TypeScript, Express, and a repository-pattern service layer.",
-      image: "",
-      technologies: ["TypeScript", "Node.js", "Express"],
-      liveUrl: "https://github.com/Maptaul/FixItNow-Backend",
+        "Full-stack TypeScript marketplace where customers book vetted technicians into real-time slots, pay through Stripe, track the job to completion and leave a review. Technicians manage their trade profile and availability; admins moderate users and categories.",
+      image: "https://image.thum.io/get/width/800/https://fixit-now-frontend.vercel.app/",
+      technologies: ["Next.js", "TypeScript", "Express", "Prisma", "PostgreSQL", "Stripe"],
+      liveUrl: "https://fixit-now-frontend.vercel.app",
       githubUrl: "https://github.com/Maptaul/FixItNow-Backend",
       featured: true,
       codeSnippet: "fixItNow.book();",
