@@ -182,7 +182,7 @@ const Hero = ({ isDarkMode }) => {
               }`}
             >
               <img
-                src="https://i.ibb.co/HTRbgptz/my.png"
+                src="https://i.ibb.co.com/zWYKRwF7/maptaul.png"
                 alt="Maptaul Islam Taraq"
                 className="w-full h-full object-cover"
               />
@@ -258,8 +258,8 @@ const Hero = ({ isDarkMode }) => {
               <span className="font-mono text-dev-comment">/* </span>
               Leading the engineering team at WioCare, building AI-powered
               healthcare systems that improve lives. Specialized in scalable
-              full-stack JavaScript applications — Next.js, React, Node.js
-              &amp; TypeScript.
+              full-stack JavaScript applications — Next.js, React, Node.js &amp;
+              TypeScript.
               <span className="font-mono text-dev-comment"> */</span>
             </p>
           </motion.div>
