@@ -15,6 +15,26 @@ const Projects = ({ isDarkMode }) => {
       codeSnippet: "WioCare.healthcare();",
     },
     {
+      title: "MessMate — Smart Mess Management Platform",
+      description:
+        "Full-stack platform that replaces the handwritten monthly ledger of a shared mess. Members plan daily meals, the manager records groceries, utility bills and bazar duty, and closing the month auto-computes every member's bill — payable by bKash, card/mobile banking (SSLCommerz) or cash. Web app plus two Flutter apps, in English and Bangla.",
+      image: "https://image.thum.io/get/width/800/https://meassmate.vercel.app/",
+      technologies: [
+        "Next.js 16",
+        "React 19",
+        "TypeScript",
+        "Express 5",
+        "Prisma",
+        "PostgreSQL",
+        "Redis",
+        "Flutter",
+      ],
+      liveUrl: "https://meassmate.vercel.app",
+      githubUrl: "https://github.com/Maptaul/Messmate-Backend",
+      featured: true,
+      codeSnippet: "MessMate.settleMonth();",
+    },
+    {
       title: "Grievance Redress System",
       description:
         "Complaint Management System The Complaint Management System is a web application that enables citizens to submit and track grievances while providing administrators with tools to manage and resolve complaints efficiently.",
@@ -78,7 +98,7 @@ const Projects = ({ isDarkMode }) => {
       technologies: ["TypeScript", "Node.js", "Express"],
       liveUrl: "https://github.com/Maptaul/FixItNow-Backend",
       githubUrl: "https://github.com/Maptaul/FixItNow-Backend",
-      featured: false,
+      featured: true,
       codeSnippet: "fixItNow.book();",
     },
     {

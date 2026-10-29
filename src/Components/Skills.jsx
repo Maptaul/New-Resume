@@ -16,6 +16,7 @@ const Skills = ({ isDarkMode }) => {
         { name: "React", level: 88, syntax: "<Component />" },
         { name: "Next.js", level: 80, syntax: "<NextPage />" },
         { name: "Tailwind CSS", level: 85, syntax: 'className=""' },
+        { name: "Flutter", level: 70, syntax: "runApp(MyApp());" },
       ],
     },
     {
@@ -29,7 +30,7 @@ const Skills = ({ isDarkMode }) => {
         { name: "REST APIs", level: 88, syntax: "GET /api/data" },
         { name: "JWT Auth & RBAC", level: 80, syntax: "jwt.sign({})" },
         { name: "Socket.IO", level: 78, syntax: 'io.on("connect")' },
-        { name: "Prisma ORM", level: 75, syntax: "prisma.user.findMany()" },
+        { name: "Prisma ORM", level: 82, syntax: "prisma.user.findMany()" },
       ],
     },
     {
@@ -40,7 +41,8 @@ const Skills = ({ isDarkMode }) => {
       skills: [
         { name: "MongoDB", level: 85, syntax: "db.find({})" },
         { name: "Firebase", level: 80, syntax: "firebase.init()" },
-        { name: "PostgreSQL", level: 72, syntax: "SELECT * FROM users;" },
+        { name: "PostgreSQL", level: 78, syntax: "SELECT * FROM users;" },
+        { name: "Redis", level: 70, syntax: "redis.get(key)" },
       ],
     },
     {
